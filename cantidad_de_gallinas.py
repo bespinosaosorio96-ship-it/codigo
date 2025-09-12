@@ -22,7 +22,7 @@ def calcularPrecio(promedio):
 
 
 
-def mensajeError(msg):
+def mensajeError():
     print("\n>> Error. Valor inválido")
     input("Presione una tecla para continuar")
     print()
