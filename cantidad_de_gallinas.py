@@ -1,13 +1,22 @@
 def numHuevo():
     cantidad=int(input("cuantos huevos pone:"))
+    while cantidad<0:
+        mensajeError("valor invalido para cantidad")
+        cantidad=int(input("cuantos huevos pone:")) 
     return cantidad
 
 def alturaGallina():
     altura=float(input("ingresa la altura de la gallina"))
+    while altura<0:
+        mensajeError("valor invalido para altura")
+        altura=float(input("ingresa la altura de la gallina"))
     return altura
 
 def pesoGallina():
     peso=float(input("ingrese el peso de la gallina"))
+    while peso<0:
+        mensajeError("valor invalido para peso")
+        peso=float(input("ingrese el peso de la gallina"))
     return peso
     
 def calidadGallina(calidad):
@@ -17,23 +26,26 @@ def calidadGallina(calidad):
         return resultado
 
 def calcularPrecio(promedio):
-    
+    if promedio<0.5:
+        return 1000
+    elif promedio>=0.5 and promedio<2:
+        return 2000
+    elif promedio>=2 and promedio<4:
+        return 3000
+    else:
+        return 4000    
 
-
-
-
-def mensajeError():
-    print("\n>> Error. Valor inválido")
+def mensajeError(mensaje):
+    print("\n>> Error. Valor inválido:", mensaje)
     input("Presione una tecla para continuar")
-    print()
 
 
 def leerCantidadGallinas():
     n=int(input("ingrese cantidad de gallinas:"))
     while n<1:
         mensajeError("valor invalido para n")
-        n=int(input("ingrese cantidad de gallinas:"))
-        return n
+        msg=int(input("ingrese cantidad de gallinas:"))
+        return msg
         
 
 
